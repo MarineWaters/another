@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ template.name }}</title>
+</head>
+<body>
+    <h1>{{ template.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="content">{{ template.content }}</textarea>
+        <br>
+        {% for setting in settings %}
+        <button type="button">{{ setting.name }}</button>
+        {% endfor %}
+        <br>
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
